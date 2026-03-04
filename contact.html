@@ -242,8 +242,10 @@
         
 
             
-           <p> <div style="display:flex; align-items:center; gap:2px;">
-  <strong>Email address:</strong><br>
+  <p>
+
+<div style="display:flex; align-items:center; gap:2px;">
+  <strong>Email address:</strong>
   <span id="emailText">contact@jclab.pro</span>
   <button onclick="copyEmail()" 
           title="Copy email address"
@@ -255,9 +257,10 @@
   <span id="copyHint" style="margin-left:6px; font-size:12px; color:#D71440; display:none;">
     Email address copied!
   </span>
+</div>
 
-<!-- 添加NTU EEE Email -->
-<div style="margin-top:6px;">
+<!-- NTU Email -->
+<div style="display:flex; align-items:center; gap:2px; margin-top:6px;">
   <strong>NTU Email:</strong>
   <span id="ntuEmailText">jin.chang@ntu.edu.sg</span>
   <button onclick="copyNtuEmail()" 
@@ -283,10 +286,6 @@ function copyNtuEmail() {
 }
 </script>
 
-               
-
-</div>
-
 <script>
 function copyEmail(){
   const email = document.getElementById("emailText").innerText;
@@ -296,6 +295,8 @@ function copyEmail(){
   setTimeout(()=>{ hint.style.display = "none"; }, 1200);
 }
 </script>
+
+</p>
 
 
 
@@ -390,6 +391,7 @@ function copyEmail(){
     </script>
 </body>
 </html>
+
 
 
 
