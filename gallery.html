@@ -2,20 +2,23 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2ESVGY9XDC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ESVGY9XDC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-  gtag('config', 'G-2ESVGY9XDC');
-</script>
+        gtag('config', 'G-2ESVGY9XDC');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - JC Lab</title>
+
     <!-- Link to Google Fonts for Roboto / 引用Google字体Roboto -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
     <style>
         /* 固定导航栏在页面顶部，并自适应宽度 */
         .navbar {
@@ -35,7 +38,7 @@
             box-sizing: border-box;
         }
 
-        /* 确保 "JC Lab@University of Glasgow" 保持在一行 */
+        /* 确保 "Quantum Nanodevices Lab" 保持在一行 */
         .logo-text {
             white-space: nowrap;
         }
@@ -63,7 +66,6 @@
         .hamburger-menu {
             display: none;
             cursor: pointer;
-            display: flex;
             align-items: center;
         }
 
@@ -88,7 +90,7 @@
             flex-direction: column;
             text-align: center;
             border-top: 1px solid #E6E6E6;
-            z-index: 9999; /* 添加这一行 */
+            z-index: 9999;
         }
 
         .mobile-menu a {
@@ -107,6 +109,7 @@
             .nav-menu {
                 display: none !important;
             }
+
             .hamburger-menu {
                 display: flex;
             }
@@ -123,17 +126,23 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        /* Gallery Title */
+        /* Gallery Header */
         .gallery-header {
-            background-color: #e84f5c; /* Example background color for the header */
-            padding: 50px 0;
+            position: relative;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
             color: white;
         }
 
         .gallery-header h1 {
-            font-size: 50px;
+            font-size: 56px;
+            font-weight: bold;
+            z-index: 1;
             margin: 0;
+            margin-top: 20px;
         }
 
         /* Gallery content section */
@@ -142,43 +151,60 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
+            gap: 35px;
         }
 
         /* Image container */
-        .gallery-item {
-            width: 300px;
-            text-align: center;
-        }
+  .gallery-item {
+    width: 180px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+.gallery-item img {
+    width: 100%;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: contain;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    display: block;
+}
 
-        .gallery-item p {
+.gallery-caption {
+    font-size: 16px;
+    margin: 6px 0 0 0 !important;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.gallery-caption a {
+    font-size: 16px;
+    color: #0b1a64;
+    text-decoration: none;
+    line-height: 1.2;
+}
+
+        .gallery-caption a {
             font-size: 16px;
-            margin-top: 10px;
-        }
-
-        .gallery-item a {
-            font-size: 14px;
-            color: #1a8ccb;
+            color: #0b1a64;
             text-decoration: none;
         }
 
-        .gallery-item a:hover {
+        .gallery-caption a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation Bar / 导航栏 -->
     <nav class="navbar">
         <a href="index.html" class="logo-text">Quantum Nanodevices Lab</a>
-    
+
         <ul class="nav-menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="research.html">Research</a></li>
@@ -212,75 +238,232 @@
         <h1>Gallery</h1>
     </section>
 
-
-    <style>
-        .gallery-header {
-            position: relative;
-            height: 100px;                /* 调整背景高度，可以改 250/350 */
-            display: flex;
-            justify-content: center;      /* 水平居中 */
-            align-items: center;          /* 垂直居中 */
-            text-align: center;
-            color: white;
-        }
-        
-        .gallery-header h1 {
-            font-size: 56px;              /* 字体更大 */
-            font-weight: bold;
-            z-index: 1;                   /* 保证文字在背景上层 */
-            margin: 0;   
-            margin-top: 20px;                 /* 去掉默认外边距 */
-        }
-        </style>
-
-
-
     <!-- Gallery Content Section -->
-    <section class="gallery-content" style="margin-top: 150px;">
-        <div class="gallery-item">
-            <img src="pictures/gallery-test1.jpg" alt="Research Image 1">
-            
-        </div>
-      
+    <section class="gallery-content" id="gallery-container" style="margin-top: 150px;">
+        <!-- Gallery items will be loaded here by JavaScript -->
     </section>
 
     <footer class="footer">
-    <div class="footer-container">
-        <div class="footer-column">
-            <h3>OUR WORK</h3>
-            <ul>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                
-            </ul>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>OUR WORK</h3>
+                <ul>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>LAB</h3>
+                <ul>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="openings.html">Openings</a></li>
+                    <li><a href="student-projects.html">Student Projects</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <a href="https://www.ntu.edu.sg/eee" target="_blank">
+                    <img src="pictures/NTU_logo.png" alt="NTU_logo" class="footer-logo">
+                </a>
+                <p>Copyright © 2025 Jin Chang - All rights reserved.</p>
+            </div>
         </div>
-        <div class="footer-column">
-            <h3>LAB</h3>
-            <ul>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="openings.html">Openings</a></li>
-                <li><a href="student-projects.html">Student Projects</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <a href="https://www.ntu.edu.sg/eee" target="_blank">
-                <img src="pictures/NTU_logo.png" alt="NTU_logo" class="footer-logo">
-            </a>
-            <p>Copyright © 2025 Jin Chang - All rights reserved.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <!-- 引入 three.js 和 vanta.clouds2.min.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.clouds2.min.js"></script>
 
-    <!-- Vanta.js 动画初始化 -->
     <script>
+        /*
+            Gallery item format:
+
+            {
+                image: "pictures/gallery-pics/your-image-file-name.jpg",
+                title: "Text shown below the image",
+                link: "https://doi.org/xxxxx"
+            }
+
+            For unpublished data, use:
+            link: "Unpublished Data"
+        */
+
+        const galleryItems = [
+            
+            {
+                image: "pictures/gallery-pics/1-NbRe-SNSPD.png",
+                title: "Single-pixel SNSPD",
+                link: " https://doi.org/10.1063/5.0021487"
+            },
+
+            {
+                image: "pictures/gallery-pics/2-suspended-PhC-cavity.png",
+                title: "Suspended PhC Cavity",
+                link: "Unpublished Data"
+            },
+
+            {
+                image: "pictures/gallery-pics/3-integrated-optomechanics.png",
+                title: "Hybrid PhC-Nanomechanical Reonator",
+                link: "https://doi.org/10.1038/s41467-023-40442-3"
+            },
+        
+            {
+                image: "pictures/gallery-pics/4-SiC.png",
+                title: "SiC Photonics Chip",
+                link: "https://doi.org/10.1021/acsphotonics.4c01373"
+            },
+
+
+            {
+                image: "pictures/gallery-pics/5-NV-NM.png",
+                title: "Hybrid NV-Nanomechanical Reonator",
+                link: "Unpublished Data"
+            },
+
+             {
+                image: "pictures/gallery-pics/6-MPSNSPD.png",
+                title: "Multipixle SNSPD",
+                link: "Unpublished Data"
+            }
+
+
+            ,
+
+             {
+                image: "pictures/gallery-pics/7-4inch.png",
+                title: "4-inch-scale Lightsail",
+                link: "https://doi.org/10.1021/acs.nanolett.4c01374"
+            }
+
+            ,
+
+             {
+                image: "pictures/gallery-pics/8-phc.png",
+                title: "SiN PhC",
+                link: "Unpublished Data"
+            }
+
+            ,
+
+             {
+                image: "pictures/gallery-pics/9-spectrometer.jpg",
+                title: "Single-photon Spectrometer",
+                link: "Unpublished Data"
+            }
+
+            ,
+
+             {
+                image: "pictures/gallery-pics/10-Wafer-scale.jpg",
+                title: "Hybrid Quantum Devices",
+                link: "Unpublished Data"
+            }
+
+            ,
+
+             {
+                image: "pictures/gallery-pics/11-2dm.jpg",
+                title: "High-Q 2D Mechanical Resonator",
+                link: "Unpublished Data"
+            }
+
+            ,
+
+             {
+                image: "pictures/gallery-pics/12-wgsnspd.png",
+                title: "Waveguide-coupled SNSPDs",
+                link: "Unpublished Data"
+            }
+
+            ,
+
+             {
+                image: "pictures/gallery-pics/13-mgb2.png",
+                title: "MgB2 HEB",
+                link: " https://doi.org/10.1063/5.0070153"
+            }
+
+             ,
+
+             {
+                image: "pictures/gallery-pics/14-mem-snspd.png",
+                title: "SNSPD on Membrane ",
+                link: " https://doi.org/10.1063/5.0039772"
+            }
+
+
+
+
+
+
+            /*
+            Add more items like this:
+
+            ,
+            {
+                image: "pictures/gallery-pics/3-waveguide-integrated-SNSPD.jpg",
+                title: "Waveguide-integrated SNSPD",
+                link: "https://doi.org/10.xxxx/xxxxx"
+            },
+            {
+                image: "pictures/gallery-pics/4-new-device.png",
+                title: "New superconducting nanodevice",
+                link: "Unpublished Data"
+            }
+            */
+        ];
+
+        function loadGallery() {
+            const container = document.getElementById("gallery-container");
+
+            galleryItems.forEach(item => {
+                const galleryItem = document.createElement("div");
+                galleryItem.className = "gallery-item";
+
+                const img = document.createElement("img");
+                img.src = item.image;
+                img.alt = item.title;
+                img.loading = "lazy";
+
+                const caption = document.createElement("p");
+                caption.className = "gallery-caption";
+
+                const link = document.createElement("a");
+                link.textContent = item.title;
+
+                const linkValue = String(item.link || "").trim().toLowerCase();
+
+                if (
+                    linkValue === "unpublished" ||
+                    linkValue === "unpublished data" ||
+                    linkValue === "unpublished-data"
+                ) {
+                    link.href = "#";
+                    link.addEventListener("click", function(event) {
+                        event.preventDefault();
+                        alert("Unpublished Data");
+                    });
+                } else {
+                    link.href = item.link;
+                    link.target = "_blank";
+                    link.rel = "noopener noreferrer";
+                }
+
+                caption.appendChild(link);
+                galleryItem.appendChild(img);
+                galleryItem.appendChild(caption);
+                container.appendChild(galleryItem);
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
+            loadGallery();
+
             VANTA.CLOUDS2({
-                el: "#vanta-background",  // 修正 el 的 ID 选择器
+                el: "#vanta-background",
                 mouseControls: true,
                 touchControls: true,
                 gyroControls: false,
@@ -305,7 +488,7 @@
         document.addEventListener('click', function(event) {
             var mobileMenu = document.getElementById("mobile-menu");
             var menuButton = document.querySelector('.hamburger-menu');
-            
+
             if (!menuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
                 mobileMenu.style.display = "none";
             }
@@ -314,8 +497,3 @@
 
 </body>
 </html>
-
-
-
-
-
