@@ -446,7 +446,56 @@ Current Projects Section
 
     <div class="news-container" id="news-container">
         <!-- Example News Items -->
-     
+
+<!-- 19th October 2026: Lab Renovation -->
+<div class="news-item">
+    <div class="news-date">
+        <strong>19th October 2026</strong>
+    </div>
+
+    <div class="news-content">
+        Renovation of our new lab space has officially
+        <a href="#"
+           style="color:#007bff; cursor:pointer;"
+           onclick="document.getElementById('renovation-popup').style.display='flex'; return false;">
+            started!
+        </a>
+    </div>
+</div>
+
+<!-- Lab Renovation Image Popup -->
+<div id="renovation-popup"
+     onclick="this.style.display='none'"
+     style="display:none;
+            position:fixed;
+            inset:0;
+            z-index:99999;
+            background:rgba(0,0,0,0.75);
+            align-items:center;
+            justify-content:center;
+            padding:20px;
+            box-sizing:border-box;">
+
+    <img src="pictures/lab-renovation/S1-B4a-03/20261019.jpg"
+         alt="Lab Renovation"
+         onclick="event.stopPropagation()"
+         style="max-width:90vw;
+                max-height:85vh;
+                width:auto;
+                height:auto;
+                object-fit:contain;
+                border-radius:10px;
+                box-shadow:0 10px 40px rgba(0,0,0,0.4);">
+</div>
+
+
+
+
+
+
+
+
+        
 
     <div class="news-item">
     <div class="news-date"><strong>3rd August 2026</strong></div>
